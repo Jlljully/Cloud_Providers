@@ -1,0 +1,8 @@
+#cloud-config
+users:
+  - name: jlljully
+    sudo: 'ALL=(ALL) NOPASSWD:ALL'
+    shell: /bin/bash
+    ssh_authorized_keys: ${file("${var.ssh_key_file}")}
+runcmd: 
+  - echo '<html><body><img src="https://storage.yandexcloud.net/picjlljully160524/some_pic.jpeg"/></body></html>' > /var/www/html/index.html
